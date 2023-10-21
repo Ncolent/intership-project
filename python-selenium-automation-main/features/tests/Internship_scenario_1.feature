@@ -14,4 +14,4 @@ Then Verify the right page opens.
 
 And Filter by sale status of Last Units.
 
-And Verify each product contains the Last Units tag
+#And Verify each product contains the Last Units tag

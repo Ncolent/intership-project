@@ -24,5 +24,5 @@ class ReelyPage(Page):
 
 
     def click_off_plan(self):
-        e = self.driver.wait.until(EC.element_to_be_clickable(self.OFF_PLAN_BUTTON))
+        e = self.driver.wait.until(EC.visibility_of_element_located(self.OFF_PLAN_BUTTON))
         e.click()
