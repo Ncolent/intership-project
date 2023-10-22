@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
-class ReelyPage(Page):
+class ReellyPage(Page):
     EMAIL_FIELD = By.CSS_SELECTOR, '#email-2'
     PASSWORD_FIELD = By.CSS_SELECTOR, '#field'
     SIGN_IN_HEADER = By.CSS_SELECTOR, '.form-header'
