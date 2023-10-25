@@ -11,7 +11,7 @@ class Page:
     FILTER_BUTTON = By.CSS_SELECTOR, '.filter-button.w-inline-block'
 
     def click(self, *locator):
-        logger.info(f'Clicking on {locator}')
+        logger.info(f'Clicking')
         self.driver.find_element(*locator).click()
 
     def find_element(self, *locator):
@@ -58,7 +58,7 @@ class Page:
         e = self.driver.wait.until(EC.element_to_be_clickable(self.FILTER_BUTTON)).click()
 
     def verify_text(self, expected_text, *locator):
-        logger.info(f'Verifying text,{expected_text}')
+        logger.info(f'Verifying text, {expected_text}')
         actual_text = self.find_element(*locator).text
         assert actual_text == expected_text, \
             f'Error expected {expected_text} did not match actual {actual_text}'

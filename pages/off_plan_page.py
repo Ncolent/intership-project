@@ -2,6 +2,7 @@ from pages.base_page import Page
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+from support.logger import logger
 
 class OffPlanPage(Page):
     OFF_PLAN_TITLE = By.CSS_SELECTOR,'div.page-title'
@@ -16,6 +17,7 @@ class OffPlanPage(Page):
         self.verify_text(p, *self.OFF_PLAN_TITLE[:30])
 
     def filter_by_last_units(self):
+        logger.info('Filtering by Last Units')
         self.click_filter_button()
         self.driver.wait.until(EC.element_to_be_clickable(self.LAST_UNITS_BUTTON))
 
