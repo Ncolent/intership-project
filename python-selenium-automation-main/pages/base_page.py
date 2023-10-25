@@ -4,15 +4,16 @@ from selenium.webdriver.common.by import By
 
 
 class Page:
-    def __init__(self,driver):
+    def __init__(self, driver):
         self.driver = driver
         self.wait = WebDriverWait(self.driver, 10)
-        FILTER_BUTTON = By.CSS_SELECTOR, '.filter-button.w-inline-block'
 
-    def click(self,*locator):
+    FILTER_BUTTON = By.CSS_SELECTOR, '.filter-button.w-inline-block'
+
+    def click(self, *locator):
         self.driver.find_element(*locator).click()
 
-    def find_element(self,*locator):
+    def find_element(self, *locator):
         return self.driver.find_element(*locator)
 
     def input_text(self, text, *locator):
@@ -41,15 +42,15 @@ class Page:
         print(f'Switching to {window_id}')
         self.driver.switch_to.window(window_id)
 
-
     def wait_for_element_clickable_click(self, *locator):
-        e = self.wait.until(EC.element_to_be_clickable(locator),message = 'Element not clickable')
+        e = self.wait.until(EC.element_to_be_clickable(locator), message='Element not clickable')
         e.click()
+
     def wait_for_element_clickable(self, *locator):
-        e = self.wait.until(EC.element_to_be_clickable(locator),message='Element not clickable')
+        e = self.wait.until(EC.element_to_be_clickable(locator), message='Element not clickable')
 
     def wait_for_element_disappear(self, *locator):
-        e = self.wait.until(EC.invisibility_of_element_located(locator) , message='Element did not disappear')
+        e = self.wait.until(EC.invisibility_of_element_located(locator), message='Element did not disappear')
 
     def click_filter_button(self):
         e = self.driver.wait.until(EC.element_to_be_clickable(self.FILTER_BUTTON)).click()
@@ -64,10 +65,5 @@ class Page:
         assert expected_text in actual_text, \
             f'Error expected partial text {expected_text} was not in actual {actual_text}'
 
-    def verify_partial_url(self,expected_part_of_url):
+    def verify_partial_url(self, expected_part_of_url):
         self.wait.until(EC.url_contains(expected_part_of_url))
-
-
-
-
-

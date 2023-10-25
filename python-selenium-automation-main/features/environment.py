@@ -10,8 +10,8 @@ def browser_init(context,scenario_name):
     :param context: Behave context
     """
     driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     ### OTHER BROWSERS ###
     # driver_path = '/Users/jblai/Desktop/internship_project/python-selenium-automation-main/geckodriver.exe'
@@ -20,19 +20,22 @@ def browser_init(context,scenario_name):
     # # context.driver = webdriver.Safari()
 
     ### HEADLESS MODE ####
+    ## options = webdriver.ChromeOptions()
+    ## options.add_argument('--headless')
+    ## service = Service(driver_path)
+    ## context.driver = webdriver.Chrome(
+    ##     options=options,
+    ##     service=service
+    ## )
+
+
+    # driver_path = ChromeDriverManager().install()
     # options = webdriver.ChromeOptions()
+    # options = Options()
     # options.add_argument('--headless')
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(
-    #     options=options,
-    #     service=service
-    # )
-    options = webdriver.ChromeOptions()
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--window-size=1000,1000')
-    service = Service(driver_path)  # Please download the chromedriver and copy this driver file into your project folder.
-    context.driver = webdriver.Chrome(options=options, service=service)
+    # options.add_argument('--window-size=1000,1000')
+    # service = Service(driver_path)  # Please download the chromedriver and copy this driver file into your project folder.
+    # context.driver = webdriver.Chrome(options=options, service=service)
 
     ### BROWSERSTACK ###
     ## Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
