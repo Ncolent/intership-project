@@ -2,8 +2,9 @@ from pages.base_page import Page
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
+from support.logger import logger
 
-class ReellyPage(Page):
+class MainPage(Page):
     EMAIL_FIELD = By.CSS_SELECTOR, '#email-2'
     PASSWORD_FIELD = By.CSS_SELECTOR, '#field'
     SIGN_IN_HEADER = By.CSS_SELECTOR, '.form-header'
@@ -12,12 +13,14 @@ class ReellyPage(Page):
 
 
     def open_main(self):
+        logger.info('Opening https://soft.reelly.io/')
         self.driver.get('https://soft.reelly.io/')
         sleep(2)
         self.driver.refresh()
 
     def log_in(self):
         sleep(5)
+        logger.info('logging in')
         self.input_text('joshhbizz@gmail.com',*self.EMAIL_FIELD)
         self.input_text('Careerist2023!',*self.PASSWORD_FIELD)
         e = self.driver.wait.until(EC.element_to_be_clickable(self.CONTINUE_BUTTON)).click()

@@ -8,12 +8,12 @@ from pages.base_page import Page
 
 @given('Open the main page')
 def open_reelly(context):
-    context.app.reelly_page.open_main()
+    context.app.main_page.open_main()
 
 @when ('Log in to the page')
 def log_in(context):
-    context.app.reelly_page.log_in()
+    context.app.main_page.log_in()
 
 @when('Click on off plan at the left side menu.')
 def click_off_plan(context):
-    context.app.reelly_page.click_off_plan()
+    context.app.main_page.click_off_plan()
