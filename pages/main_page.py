@@ -21,7 +21,7 @@ class MainPage(Page):
     def log_in(self):
         sleep(5)
         logger.info('logging in')
-        self.input_text('joshhb  izz@gmail.com',*self.EMAIL_FIELD)
+        self.input_text('joshhbizz@gmail.com',*self.EMAIL_FIELD)
         self.input_text('Careerist2023!',*self.PASSWORD_FIELD)
         e = (self.driver.wait.until(EC.element_to_be_clickable(self.CONTINUE_BUTTON)))
         e.click()

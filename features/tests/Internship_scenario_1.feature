@@ -2,6 +2,7 @@
 Feature: # Enter feature name here
   # Enter feature description here
 
+  @smoke
   Scenario:Scenario 25: User can filter by sale status Last Units
 
 Given Open the main page
