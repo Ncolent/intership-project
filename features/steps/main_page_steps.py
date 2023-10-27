@@ -17,3 +17,9 @@ def log_in(context):
 @when('Click on off plan at the left side menu.')
 def click_off_plan(context):
     context.app.main_page.click_off_plan()
+
+
+@when('Click on off plan at the left side menu on a mobile device')
+def click_off_plan(context):
+    context.app.main_page.click_off_plan_mobile()
+

@@ -2,17 +2,31 @@
 Feature: # Enter feature name here
   # Enter feature description here
 
-  @smoke
-  Scenario:Scenario 25: User can filter by sale status Last Units
+#  @smoke
+#  Scenario:Scenario 25: User can filter by sale status Last Units
+#
+#Given Open the main page
+#
+#When Log in to the page
+#
+#And Click on off plan at the left side menu.
+#
+#Then Verify the right page opens.
+#
+#And Filter by sale status of Last Units.
+
+  @mobile
+  Scenario:Scenario 25: User can filter by sale status Last Units on a mobile device
 
 Given Open the main page
 
 When Log in to the page
 
-And Click on off plan at the left side menu.
+And Click on off plan at the left side menu on a mobile device
 
 Then Verify the right page opens.
 
 And Filter by sale status of Last Units.
+
 
 #And Verify each product contains the Last Units tag

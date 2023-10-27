@@ -11,11 +11,6 @@ class OffPlanPage(Page):
     PAGE_ITEMS = By.CSS_SELECTOR, '[class="project-card w-inline-block"]'
     CURRENT_SELECTION = By.CSS_SELECTOR, '._5-comission'
     TEXT = By.XPATH, '//*[@wized="projectStatus"]'
-
-    def verify_off_plan(self):
-        p = self.driver.find_element(*self.OFF_PLAN_TITLE).text[:30]
-        self.verify_text(p, *self.OFF_PLAN_TITLE[:30])
-
     def filter_by_last_units(self):
         logger.info('Filtering by Last Units')
         self.click_filter_button()
@@ -60,3 +55,12 @@ class OffPlanPage(Page):
         # for i in range(len_of_elements):
         #
         #     assert expected_text == actual_text
+
+
+
+    def verify_off_plan(self):
+        p = self.driver.find_element(*self.OFF_PLAN_TITLE).text[:30]
+        self.verify_text(p, *self.OFF_PLAN_TITLE[:30])
+
+
+
