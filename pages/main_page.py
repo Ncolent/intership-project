@@ -9,7 +9,7 @@ class MainPage(Page):
     PASSWORD_FIELD = By.CSS_SELECTOR, '#field'
     SIGN_IN_HEADER = By.CSS_SELECTOR, '.form-header'
     OFF_PLAN_BUTTON = By.CSS_SELECTOR, '.menu-twobutton'
-    OFF_PLAN_BUTTON_MOBILE = By.CSS_SELECTOR, '[wized="mobileTabProperties"]'
+    OFF_PLAN_BUTTON_MOBILE = By.CSS_SELECTOR, '[wized="mobileMenuForVerifiedUsers"] > [aria-current="page"]'
     CONTINUE_BUTTON = By.CSS_SELECTOR, '.login-button.w-button'
 
 
@@ -33,5 +33,4 @@ class MainPage(Page):
         e.click()
 
     def click_off_plan_mobile(self):
-        e = self.driver.wait.until(EC.visibility_of_element_located(self.OFF_PLAN_BUTTON_MOBILE))
-        e.click()
+        e = self.click(*self.OFF_PLAN_BUTTON_MOBILE)

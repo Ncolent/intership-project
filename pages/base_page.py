@@ -9,6 +9,7 @@ class Page:
         self.wait = WebDriverWait(self.driver, 10)
 
     FILTER_BUTTON = By.CSS_SELECTOR, '.filter-button.w-inline-block'
+    FILTER_BUTTON_MOBILE = By.CSS_SELECTOR, 'div.filter-button'
 
     def click(self, *locator):
         logger.info(f'Clicking')
@@ -56,6 +57,8 @@ class Page:
 
     def click_filter_button(self):
         e = self.driver.wait.until(EC.element_to_be_clickable(self.FILTER_BUTTON)).click()
+    def click_filter_button_mobile(self):
+        self.click(*self.FILTER_BUTTON_MOBILE)
 
     def verify_text(self, expected_text, *locator):
         logger.info(f'Verifying text, {expected_text}')

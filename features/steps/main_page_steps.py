@@ -20,6 +20,6 @@ def click_off_plan(context):
 
 
 @when('Click on off plan at the left side menu on a mobile device')
-def click_off_plan(context):
+def click_off_plan_mobile(context):
     context.app.main_page.click_off_plan_mobile()
 

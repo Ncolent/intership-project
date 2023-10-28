@@ -14,7 +14,11 @@ class OffPlanPage(Page):
     def filter_by_last_units(self):
         logger.info('Filtering by Last Units')
         self.click_filter_button()
-        self.driver.wait.until(EC.element_to_be_clickable(self.LAST_UNITS_BUTTON))
+        self.driver.wait.until(EC.element_to_be_clickable(self.LAST_UNITS_BUTTON)).click()
+    def filter_by_last_units_mobile(self):
+        logger.info('Filtering by Last Units')
+        self.click_filter_button_mobile()
+        self.driver.wait.until(EC.element_to_be_clickable(self.LAST_UNITS_BUTTON)).click()
 
     def verify_each_item_last_unit(self):
         self.verify_text('Last units',*self.TEXT)

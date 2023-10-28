@@ -9,6 +9,10 @@ def verify_off_plan_opened(context):
 def filter_last_units(context):
     context.app.off_plan_page.filter_by_last_units()
 
+@then('Filter by sale status of Last Units on mobile')
+def filter_last_units_mobile(context):
+    context.app.off_plan_page.filter_by_last_units_mobile()
+
 @then('Verify each product contains the Last Units tag')
 def verify_each_item_last_unit(context):
     context.app.off_plan_page.verify_each_item_last_unit()
